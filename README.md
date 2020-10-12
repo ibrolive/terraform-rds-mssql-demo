@@ -1,4 +1,4 @@
-# terraform-rds-postgres-demo
+# terraform-rds-mssql-demo
 Terraform script to provision postgres database.
 
 ## How to use
@@ -6,13 +6,13 @@ Terraform script to provision postgres database.
 #### On windows
 ```
 mkdir secrets
-echo|set /p="Your_DB_Password" > secrets/postgresdb-password.txt
+echo|set /p="Your_DB_Password" > secrets/mssql-password.txt
 ```
 
 #### On Linux
 ```
 mkdir secrets
-printf "Your_DB_Password" > secrets/postgresdb-password.txt
+printf "Your_DB_Password" > secrets/mssql-password.txt
 ```
 
 ### Execute IaC scripts
@@ -23,4 +23,4 @@ terraform apply
 terraform destroy
 ```
 
-If you're looking for a simpler version see - https://blog.faraday.io/how-to-create-an-rds-instance-with-terraform/
+If you're looking for a simpler version see - https://github.com/terraform-aws-modules/terraform-aws-rds/tree/master/examples/complete-mssql
