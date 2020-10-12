@@ -18,7 +18,9 @@ resource "aws_db_instance" "sqlexpress" {
   identifier                = "sqlexpress"
   multi_az                  = false
   name                      = null
-  create_db_parameter_group = false
+  #parameter_group_name      = "sqlexpressparamgroup1" # if you have tuned it
+  #create_db_parameter_group = false #unsupported argument
+  #major_engine_version      = "14.00" #unsupported argument
   timezone                  = "Central Standard Time"
   license_model             = "license-included"
   password                  = "${trimspace(file("${path.module}/secrets/postgresdb-password.txt"))}"
@@ -31,6 +33,5 @@ resource "aws_db_instance" "sqlexpress" {
   maintenance_window        = "Mon:00:00-Mon:03:00"
   backup_window             = "03:00-06:00"
   final_snapshot_identifier = "demodb" # Snapshot name upon DB deletion
-  major_engine_version      = "14.00"
   deletion_protection       = false # Database Deletion Protection
 }
