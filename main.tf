@@ -32,6 +32,6 @@ resource "aws_db_instance" "sqlexpress" {
   vpc_security_group_ids    = ["${aws_security_group.AWS_VPC_Security_Group.id}"]
   maintenance_window        = "Mon:00:00-Mon:03:00"
   backup_window             = "03:00-06:00"
-  final_snapshot_identifier = "demodb" # Snapshot name upon DB deletion
+  final_snapshot_identifier = "SqlexpressDemoDBSnapshot" # Snapshot name upon DB deletion
   deletion_protection       = false # Database Deletion Protection
 }
