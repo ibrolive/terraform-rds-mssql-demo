@@ -1,5 +1,5 @@
 # terraform-rds-mssql-demo
-Terraform script to provision postgres database.
+Terraform script to provision SQL Server Express database.
 
 ## How to use
 ### Create database password file
