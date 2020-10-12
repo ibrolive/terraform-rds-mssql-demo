@@ -26,7 +26,7 @@ resource "aws_db_instance" "sqlexpress" {
   password                  = "${trimspace(file("${path.module}/secrets/postgresdb-password.txt"))}"
   port                      = 1433
   publicly_accessible       = true
-  storage_encrypted         = true # you should always do this
+  storage_encrypted         = false
   storage_type              = "gp2"
   username                  = "sqlexpress"
   vpc_security_group_ids    = ["${aws_security_group.AWS_VPC_Security_Group.id}"]
